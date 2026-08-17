@@ -760,6 +760,10 @@
     @media (max-width:719px){.hero-proof{font-size:.66rem;margin-top:.95rem}}
     /* Tutera: phone hero crop keeps both people (they sit in the right third of the hallway still) (operator, 2026-08-16) */
     @media (max-width:719px){.hero video,.hero .media>img{object-position:78% 45%}}
+    /* Tutera: single phone tile under the form (three offices, no address tile) (operator, 2026-08-16) */
+    .talk{grid-template-columns:1fr}
+    /* Tutera: phones center the location line under the form (operator, 2026-08-16) */
+    @media (max-width:719px){.offer-loc .price-line{justify-content:center;text-align:center;flex-direction:column;align-items:center}}
   </style>
 </head>
 <body>
@@ -1170,15 +1174,11 @@
             </form>
             <!-- SWAP: submit note. PLACEHOLDER: the form is not wired; this note only stands in for the GHL response until wiring. -->
             <p id="done" role="status" hidden>Received. A member of our team will confirm your consultation and answer any questions. Nothing is booked or charged until you say so.</p>
-            <!-- SWAP: prefer-to-talk tiles under the form (phone + studio address; link the address to the Google listing) -->
+            <!-- SWAP: prefer-to-talk tile under the form (phone only; three offices, so no single address here) -->
             <div class="talk reveal" aria-label="Other ways to reach the studio">
               <a class="talk-tile" href="tel:+14808741515">
                 <span class="talk-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
                 <span class="talk-tx"><span class="talk-lb">Prefer to talk?</span><span class="talk-v">(480) 874-1515</span></span>
-              </a>
-              <a class="talk-tile" href="https://goo.gl/maps/KvbiZfzU58eLzmxd8" target="_blank" rel="noopener noreferrer">
-                <span class="talk-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg></span>
-                <span class="talk-tx"><span class="talk-lb">Scottsdale office</span><span class="talk-v">8412 E Shea Blvd, #101, <span class="nw">Scottsdale, AZ</span></span></span>
               </a>
             </div>
           </div>
