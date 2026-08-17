@@ -747,13 +747,16 @@
       .profile.prep:not(.drawn) .pt{opacity:1;transform:none}
     }
     /* Tutera: individual provider portraits in the offer block instead of one team photo (operator, 2026-08-16) */
-    .offer-team .team-grid{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem .95rem}
-    .offer-team .team-grid li{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .offer-team .team-grid{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:1.15rem .95rem}
+    .offer-team .team-grid li{display:flex;flex-direction:column;align-items:center;text-align:center;grid-column:span 2}
+    /* five providers: row of three, then two centered beneath (2026-08-17) */
+    .offer-team .team-grid li:nth-child(4){grid-column:2/span 2}
+    .offer-team .team-grid li:nth-child(5){grid-column:4/span 2}
     .offer-team .team-grid img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 20%;border:1px solid var(--onlit-hair);filter:grayscale(.15) brightness(.98) contrast(1.03);margin-bottom:.7rem}
     .offer-team .team-grid b{font-family:var(--disp);font-weight:400;font-size:.98rem;line-height:1.25;color:var(--onlit)}
     .offer-team .team-grid span{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--onlit-3);font-weight:700;margin-top:.3rem;line-height:1.5}
     .offer-team .team-note{margin-top:1.15rem;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--onlit-3);font-weight:700}
-    @media (max-width:479px){.offer-team .team-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:479px){.offer-team .team-grid{grid-template-columns:repeat(4,1fr)}.offer-team .team-grid li:nth-child(4){grid-column:3/span 2}.offer-team .team-grid li:nth-child(5){grid-column:2/span 2}}
     /* Tutera: quiet review proof line under the hero chips (operator, 2026-08-16) */
     .hero-proof{margin-top:1.15rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink-2);display:flex;align-items:center;gap:.6rem}
     .hero-proof .stars{color:var(--vio);letter-spacing:2px;font-size:.9rem;line-height:1}
@@ -973,7 +976,6 @@
             <li><img src="tutera-assets/provider-borhan.webp" width="400" height="400" alt="Shary Borhan, MD, FACOG" loading="lazy" decoding="async"><b>Shary Borhan</b><span>MD, FACOG</span></li>
             <li><img src="tutera-assets/provider-nunn.webp" width="400" height="400" alt="Steve Nunn, MPAS, PA-C, DFAAPA" loading="lazy" decoding="async"><b>Steve Nunn</b><span>MPAS, PA-C, DFAAPA</span></li>
             <li><img src="tutera-assets/provider-ferreira.webp" width="400" height="400" alt="Melanie Ferreira, RN, MSN, FNP-C" loading="lazy" decoding="async"><b>Melanie Ferreira</b><span>RN, MSN, FNP-C</span></li>
-            <li><img src="tutera-assets/provider-dhillon-dougher.webp" width="400" height="400" alt="Satinder Dhillon-Dougher, MSN, APRN, AGNP-C" loading="lazy" decoding="async"><b>Satinder Dhillon-Dougher</b><span>MSN, APRN, AGNP-C</span></li>
           </ul>
           <p class="team-note">The providers, across the Scottsdale, Chandler and Glendale offices</p>
         </div>
