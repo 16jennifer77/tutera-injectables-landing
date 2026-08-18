@@ -696,7 +696,14 @@
     .lit .btn:hover{background:var(--onlit);border-color:var(--onlit);color:var(--lit)}
     .lit .btn-ghost{background:transparent;color:var(--onlit);border-color:var(--onlit-hair)}
     .lit .btn-ghost:hover{color:var(--vio-deep);border-color:var(--vio-deep)}
-    .lit .fine{color:var(--onlit-3);font-size:.82rem;line-height:1.6;max-width:52ch}
+        .lit .fine{color:var(--onlit-3);font-size:.82rem;line-height:1.6;max-width:52ch}
+    /* Offer block, numbered consult moments (Jennifer 2026-08-17, ported from master 57 / Cedar Creek): replaces the plain rule list so the section reads differently from #expect */
+    .consult-steps{list-style:none;margin-top:1.7rem;border-top:1px solid var(--onlit-hair)}
+    .consult-steps li{display:grid;grid-template-columns:2.6rem 1fr;gap:.2rem 1rem;align-items:start;padding-block:1.15rem;border-bottom:1px solid var(--onlit-hair-soft)}
+    .consult-steps li i{font-style:normal;font-family:var(--disp);font-weight:500;font-size:1.35rem;line-height:1.15;color:var(--vio-deep);letter-spacing:.02em}
+    .consult-steps li b{display:block;font-family:var(--disp);font-weight:500;font-size:1.08rem;line-height:1.3;color:var(--onlit);letter-spacing:.01em;margin-bottom:.25rem}
+    .consult-steps li span{display:block;font-size:.93rem;line-height:1.6;color:var(--onlit-2);max-width:46ch}
+    .offer-body .consult-steps{margin-bottom:.4rem}
     /* trust band: five pairs */
     .tband{border-block:1px solid var(--hair);background:var(--noir-2)}
     .tband ul{list-style:none;display:grid;grid-template-columns:1fr}
@@ -781,7 +788,7 @@
   06. Sound familiar?: H2 (no lede) + 4 pain cards (icon, number, label, line)
   07. Where injectables can help: H2 (no lede) + profile drawing (3 treatment points: forehead, between brows, beside the eye) + 4 area rows with square studies
   08. What to expect: consult figure + heading + 6 expectation rows + CTA repeat
-  09. Offer block (lit ground): real team photo + heading + lede + 4 bullets + promise line + 2 CTAs + disclaimer
+  09. Offer block "Your first visit" (lit ground): real team photo + heading + one-line lede + 3 numbered consult moments (one short line each) + 2 CTAs + disclaimer
   10. Trust band: 5 pairs (rating, who leads, natural, licensed injectors, on the lake)
   11. The essay: founders photo + head + ~80 word prose block + address card
   12. Reviews: featured quote panel + 4 verbatim Google cards (full text) + disclaimer (claim source comment above)
@@ -965,7 +972,7 @@
       </div>
     </section>
 
-    <!-- ============ 7 · OFFER BLOCK: a complimentary first consultation (lit ground, real team photo) ============ -->
+    <!-- ============ 7 · OFFER BLOCK: your first visit, a complimentary consultation (lit ground, real team photo) ============ -->
     <section class="sec lit offer-sec" id="offer">
       <div class="wrap practice-grid">
         <!-- SWAP: provider portraits (real headshots from tuteramedical.com, current roster verified 2026-08-16; names and credentials exactly as the site lists them) -->
@@ -980,17 +987,15 @@
           <p class="team-note">The providers, across the Scottsdale, Chandler and Glendale offices</p>
         </div>
         <div class="offer-body">
-          <!-- SWAP: offer kicker, heading, lede, 4 bullets, promise line, CTAs, disclaimer -->
-          <p class="kicker reveal">The offer</p>
-          <h2 class="reveal" style="--d:.06s">A complimentary <span class="nw">first consultation.</span></h2>
-          <p class="lead reveal" style="--d:.12s">An honest look at what will help, what won't, and when to wait.</p>
-          <ul class="rlist reveal" style="--d:.18s">
-            <li>Your face read first, then a plan that suits it</li>
-            <li>A conservative start, built gradually</li>
-            <li>Skilled, licensed providers, every visit</li>
-            <li>Costs explained clearly up front</li>
-          </ul>
-          <p class="promise reveal" style="--d:.22s">No pressure. No obligation. No surprises.</p>
+          <!-- SWAP: consult kicker, heading, lede, 3 numbered moments, CTAs, disclaimer. Keep it this light: one short line per step, no bullet list that mirrors #expect (Jennifer 2026-08-17) -->
+          <p class="kicker reveal">Your first visit</p>
+          <h2 class="reveal" style="--d:.06s">Come with questions. <span class="nw">Leave with a plan.</span></h2>
+          <p class="lead reveal" style="--d:.12s">Complimentary, and nothing has to happen the same day.</p>
+          <ol class="consult-steps reveal" style="--d:.18s">
+            <li><i>01</i><div><b>Ask anything</b><span>Your questions, photos, and what bothers you most.</span></div></li>
+            <li><i>02</i><div><b>Get honest answers</b><span>Your face read first: what helps, what won't, and when to wait.</span></div></li>
+            <li><i>03</i><div><b>See the plan and the cost</b><span>A conservative start, priced clearly. Take it home and think it over.</span></div></li>
+          </ol>
           <div class="hero-cta reveal" style="--d:.26s">
             <a class="btn" href="#lead">Book your consultation
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
