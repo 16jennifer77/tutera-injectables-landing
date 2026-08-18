@@ -3,7 +3,7 @@
   TUTERA MEDICAL : FACIAL INJECTABLES : GOOGLE ADS LANDING PAGE on master 57 Verdant (2026-08-16)
   Client copy of google-ad-templates/57-filler-verdant.html (the approved Cedar Creek conversion spine),
   filled at SWAP points only: Tutera palette (navy #152966 ground family + teal #2596be accent + ice #e9f9ff
-  lit band), Prata/Outfit type, TM wordmark, three Valley offices, 5.0 across 515 Google reviews (9 verbatim
+  lit band), Prata/Outfit type, TM wordmark, three Valley offices, 5.0 across 737 Google reviews (9 verbatim
   cards), current provider roster (tuteramedical.com nav "Our Providers" + About page, verified 2026-08-16),
   Tutera's own footer terms. Category language only, no pricing, no duration claims. Form unwired.
   Imagery: AI studio recreations of the real offices (hero consult, front desk, four studies, reception);
@@ -33,7 +33,7 @@
   photo, review wall (featured panel + four full-text cards), closing CTA + lead form with two
   contact tiles and a locale still, centered FAQ under the form, three-column footer.
   Google Ads law (see .agents/skills/website-templates/references/google-ads-lp-cro.md): no drug
-  brand names, no pricing, no duration claims, "complimentary" never "free", noindex, gclid
+  brand names, no pricing, no duration claims, "free" wherever the word means the consult (doctrine s10, settled 2026-08-18), noindex, gclid
   capture, hero is a preloaded still, unwired lead form (first, last, phone, email, consult
   type). Deliberate divergences carried over from the approved client build: no sticky call bar
   on phones (a Book consult button sits in the header beside the brand), FAQ closed and below the
@@ -53,7 +53,7 @@
   <!-- SWAP: page title. Keep the pipe separator, never a dash. -->
   <title>Facial Injectables in Scottsdale, Chandler and Glendale | Tutera Medical</title>
   <!-- SWAP: meta description, 150 to 160 characters. -->
-  <meta name="description" content="Provider-placed facial injectables at Tutera Medical in Scottsdale, Chandler and Glendale. Wrinkle-relaxing injections planned with you for a natural, refreshed look. Complimentary consultation.">
+  <meta name="description" content="Provider-placed facial injectables at Tutera Medical in Scottsdale, Chandler and Glendale. Wrinkle-relaxing injections planned with you for a natural, refreshed look. Free consultation.">
   <meta name="theme-color" content="#0B152F">
   <!-- ad destination: keep out of the organic index -->
   <meta name="robots" content="noindex, nofollow">
@@ -68,22 +68,22 @@
   <style>
     /* SWAP: brand palette (edit these tokens only) */
     :root{
-      --noir:#0b152f; --noir-2:#111d3d; --panel:#152348;
-      --cedar:#152966; --sage:#8fb9cf;
-      --vio:#3aa8d0; --vio-deep:#1f7ea3; --vio-soft:#a9dcef;
+      --noir:#f6f9fb; --noir-2:#eaf1f6; --panel:#dbe6f0;
+      --cedar:#1f3470; --sage:#8fb9cf;
+      --vio:#1d7f9e; --vio-deep:#1f7ea3; --vio-soft:#a9dcef;
       --white:#ffffff;
-      --ink:#eef4f9; --ink-2:#c3d1de;
-      --muted:rgba(238,244,249,.62); --faint:rgba(238,244,249,.4);
-      --hair:rgba(238,244,249,.14); --hair-soft:rgba(238,244,249,.07);
-      --wash:rgba(58,168,208,.13); --wash-soft:rgba(58,168,208,.07);
-      --halo:rgba(58,168,208,.45);
-      --veil:rgba(11,21,47,.36); --scrim:rgba(11,21,47,.93); --scrim-mid:rgba(11,21,47,.48);
-      --lit:#eef8fc; --lit-2:#dcedf5;
-      --onlit:#152966; --onlit-2:rgba(21,41,102,.76); --onlit-3:rgba(21,41,102,.54);
-      --onlit-hair:rgba(21,41,102,.16); --onlit-hair-soft:rgba(21,41,102,.08);
+      --ink:#0d1b3e; --ink-2:#3d4a66;
+      --muted:rgba(13,27,62,.7); --faint:rgba(13,27,62,.55);
+      --hair:rgba(13,27,62,.14); --hair-soft:rgba(238,244,249,.07);
+      --wash:rgba(84,198,208,.16); --wash-soft:rgba(58,168,208,.07);
+      --halo:rgba(84,198,208,.45);
+      --veil:rgba(246,249,251,.22); --scrim:rgba(11,21,47,.93); --scrim-mid:rgba(11,21,47,.48);
+      --lit:#e4f1f5; --lit-2:#dcedf5;
+      --onlit:#1f3470; --onlit-2:rgba(21,41,102,.76); --onlit-3:rgba(21,41,102,.54);
+      --onlit-hair:rgba(31,52,112,.16); --onlit-hair-soft:rgba(21,41,102,.08);
       --disp:'Prata',serif; --body:'Outfit',sans-serif;
       --ease:cubic-bezier(.22,.61,.25,1);
-      --grade:grayscale(.12) brightness(.9) contrast(1.04);
+      --grade:grayscale(.08) brightness(1) contrast(1.02);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:100%;scroll-padding-top:0}
@@ -211,6 +211,8 @@
     .sheet .sheet-note{margin-top:1.4rem;color:var(--faint);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
 
     /* ---------- hero: full-bleed film band, inset copy ---------- */
+    /* The page's only dark surface. Secondary text tokens invert back here. */
+    .hero{--ink-2:#c3d1de;--faint:rgba(238,244,249,.4)}
     .hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:flex-end;overflow:hidden}
     .hero .media{position:absolute;inset:0}
     .hero .media::after{content:none}
@@ -371,7 +373,7 @@
     .offer-copy h2{margin-bottom:1rem;max-width:16ch}
     .offer-copy>p,.offer-head>p{color:var(--ink-2);max-width:46ch;margin-bottom:1.8rem}
     .price-line{display:flex;align-items:baseline;gap:.7rem;border-top:1px solid var(--hair);padding-top:1.4rem}
-    .price-line b{font-family:var(--disp);font-weight:500;font-size:2.1rem;color:var(--white)}
+    .price-line b{font-family:var(--disp);font-weight:500;font-size:2.1rem;color:var(--ink)}
     .price-line span{color:var(--faint);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:500}
     form{background:var(--noir-2);border:1px solid var(--hair);padding:clamp(1.6rem,3vw,2.4rem);display:grid;gap:1.1rem;box-shadow:0 40px 90px -50px #000000}
     .field label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);margin-bottom:.5rem}
@@ -696,14 +698,7 @@
     .lit .btn:hover{background:var(--onlit);border-color:var(--onlit);color:var(--lit)}
     .lit .btn-ghost{background:transparent;color:var(--onlit);border-color:var(--onlit-hair)}
     .lit .btn-ghost:hover{color:var(--vio-deep);border-color:var(--vio-deep)}
-        .lit .fine{color:var(--onlit-3);font-size:.82rem;line-height:1.6;max-width:52ch}
-    /* Offer block, numbered consult moments (Jennifer 2026-08-17, ported from master 57 / Cedar Creek): replaces the plain rule list so the section reads differently from #expect */
-    .consult-steps{list-style:none;margin-top:1.7rem;border-top:1px solid var(--onlit-hair)}
-    .consult-steps li{display:grid;grid-template-columns:2.6rem 1fr;gap:.2rem 1rem;align-items:start;padding-block:1.15rem;border-bottom:1px solid var(--onlit-hair-soft)}
-    .consult-steps li i{font-style:normal;font-family:var(--disp);font-weight:500;font-size:1.35rem;line-height:1.15;color:var(--vio-deep);letter-spacing:.02em}
-    .consult-steps li b{display:block;font-family:var(--disp);font-weight:500;font-size:1.08rem;line-height:1.3;color:var(--onlit);letter-spacing:.01em;margin-bottom:.25rem}
-    .consult-steps li span{display:block;font-size:.93rem;line-height:1.6;color:var(--onlit-2);max-width:46ch}
-    .offer-body .consult-steps{margin-bottom:.4rem}
+    .lit .fine{color:var(--onlit-3);font-size:.82rem;line-height:1.6;max-width:52ch}
     /* trust band: five pairs */
     .tband{border-block:1px solid var(--hair);background:var(--noir-2)}
     .tband ul{list-style:none;display:grid;grid-template-columns:1fr}
@@ -754,9 +749,9 @@
       .profile.prep:not(.drawn) .pt{opacity:1;transform:none}
     }
     /* Tutera: individual provider portraits in the offer block instead of one team photo (operator, 2026-08-16) */
-    .offer-team .team-grid{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:1.15rem .95rem}
-    .offer-team .team-grid li{display:flex;flex-direction:column;align-items:center;text-align:center;grid-column:span 2}
-    /* five providers: row of three, then two centered beneath (2026-08-17) */
+    /* 5 providers: 6-track grid, each card spans 2 -> 3+2 centered on desktop, 2+2+1 centered on phones (Jennifer, 2026-08-18) */
+    .offer-team .team-grid{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:1.15rem .95rem;padding:0;margin:0}
+    .offer-team .team-grid li{grid-column:span 2;display:flex;flex-direction:column;align-items:center;text-align:center}
     .offer-team .team-grid li:nth-child(4){grid-column:2/span 2}
     .offer-team .team-grid li:nth-child(5){grid-column:4/span 2}
     .offer-team .team-grid img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 20%;border:1px solid var(--onlit-hair);filter:grayscale(.15) brightness(.98) contrast(1.03);margin-bottom:.7rem}
@@ -775,20 +770,66 @@
     .offer .talk .talk-tile{justify-content:center}
     /* Tutera: phones center the location line under the form (operator, 2026-08-16) */
     @media (max-width:719px){.offer-loc .price-line{justify-content:center;text-align:center;flex-direction:column;align-items:center}}
-  </style>
+  
+    /* ===== DARK HERO VARIANT (Jacob option A, 2026-08-18): the approved dark page's hero treatment
+       over the light body. Only the hero band + the nav-over-hero state change; everything below
+       the hero is the light FINAL, untouched. Values are this page's dark twin's literals. ===== */
+    .hero-scrim{background:linear-gradient(to top,rgba(11,21,47,.94) 4%,rgba(11,21,47,.62) 46%,rgba(11,21,47,.28)),linear-gradient(to right,rgba(11,21,47,.62),transparent 55%)}
+    .hero .media>img{filter:grayscale(.12) brightness(.9) contrast(1.04)}
+    .hero h1{color:#eef4f9}
+    .hero .kicker,.hero .vio{color:#3aa8d0}
+    .hero .kicker::before{background:#3aa8d0}
+    .hero-sub{color:#c3d1de}
+    .hero-chips li{background:rgba(11,21,47,.42);border-color:rgba(238,244,249,.14);color:#c3d1de}
+    .hero .btn-ghost{color:#eef4f9;border-color:rgba(238,244,249,.32)}
+    .hero .btn-ghost:hover{color:#fff;border-color:rgba(238,244,249,.55)}
+    .nav:not(.scrolled) .brand{color:#eef4f9}
+    .nav:not(.scrolled) .nav-links a{color:#c3d1de}
+    .nav:not(.scrolled) .nav-links a:hover{color:#eef4f9}
+    @media (max-width:719px){.hero-scrim::after{content:"";position:absolute;inset:0;background:rgba(11,21,47,.3)}}
+
+    /* Hover text on the light body: the dark page's ice-blue hover (--vio-soft #a9dcef) is too faint to read
+       on the light ground, so text hovers go to a darker teal-navy instead (Jennifer, 2026-08-18).
+       The nav-over-dark-hero state above keeps its own light hover. */
+    :root{--vio-hover:#175f7a}
+    .sheet a:not(.btn):hover,.textlink:hover,.faq summary:hover,
+    .foot-col a:hover,.maplink:hover,.talk-tile:hover .talk-v,.trust .tlink:hover{color:var(--vio-hover)}
+    /* Scrolled nav bar is the dark scrim, so its links stay light like the over-hero state (resting was dark-on-dark). */
+    .nav.scrolled .nav-links a{color:#c3d1de}
+    .nav.scrolled .nav-links a:hover{color:#eef4f9}
+    .textlink:hover,.maplink:hover,.trust .tlink:hover{border-color:var(--vio-hover)}
+    /* Ghost buttons on the light body (e.g. "Show more reviews"): darker hover text; hero + offer-block ghosts keep their own rules. */
+    .btn-ghost:hover{color:var(--vio-hover);border-color:var(--vio-hover)}
+    /* "Not sure yet" row: quiet text link to the form, same style as the reviews link (Jennifer, 2026-08-18) */
+    .area-row .area-link{display:inline-block;margin-top:.7rem}
+
+</style>
+<!-- GTM container slot (launch call ruling 2026-08-17, LAUNCH-CALL-NOTES items 7-8): one
+     container per client site; serves Google conversion tracking at launch + the Reddit pixel later.
+     The loader below is INERT until the sentinel is replaced with the real Tutera Medical container ID
+     (Jacob supplies; credentials-adjacent). The lp_form_submit_success dataLayer event fires on the
+     relay SUCCESS state only and carries page identifiers, never lead fields. -->
+<script>
+window.dataLayer=window.dataLayer||[];
+window.LP_GTM_ID='GTM_PENDING_TUTERA'; /* swap to the real Tutera Medical GTM container ID to arm */
+(function(w,d,s,l,i){if(!/^GTM-[A-Z0-9]+$/.test(i))return;w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',window.LP_GTM_ID);
+</script>
 </head>
 <body>
+<!-- GTM noscript — uncomment in the same commit that swaps GTM_PENDING_TUTERA for the real container ID:
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-REAL-ID-HERE" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+-->
 <!-- ============================================================
   SWAP MANIFEST (every editable spot, in page order)
   01. <title> + meta description + noindex + hero preload (head)
   02. Favicon + palette tokens + fonts link
   03. Nav brand, links, CTA (phones: short "Book consult" label beside the brand; no Call / Book bar, no hamburger)
   04. Hero: still (preloaded, slow Ken Burns) + eyebrow (locations only), H1 + sub, 2 CTAs, 4 chips
-  05. Stat band: 3 facts (rating across N reviews / on the lake / complimentary)
+  05. Stat band: 3 facts (rating across N reviews / on the lake / free)
   06. Sound familiar?: H2 (no lede) + 4 pain cards (icon, number, label, line)
   07. Where injectables can help: H2 (no lede) + profile drawing (3 treatment points: forehead, between brows, beside the eye) + 4 area rows with square studies
   08. What to expect: consult figure + heading + 6 expectation rows + CTA repeat
-  09. Offer block "Your first visit" (lit ground): real team photo + heading + one-line lede + 3 numbered consult moments (one short line each) + 2 CTAs + disclaimer
+  09. Offer block (lit ground): real team photo + heading + lede + 4 bullets + promise line + 2 CTAs + disclaimer
   10. Trust band: 5 pairs (rating, who leads, natural, licensed injectors, on the lake)
   11. The essay: founders photo + head + ~80 word prose block + address card
   12. Reviews: featured quote panel + 4 verbatim Google cards (full text) + disclaimer (claim source comment above)
@@ -796,7 +837,7 @@
   14. FAQ (centered, below the form): 6 question and answer pairs, all closed until opened
   15. Footer: blurb, address, contact, hours, copyright + Privacy / Terms / Contact stubs, disclaimers
 ============================================================ -->
-<!-- Claim source: Tutera Medical rated 5.0 across 515 Google reviews, verified 2026-08-14 via the Google listing mirror at reviews.birdeye.com/tutera-medical-inc-156468039789264 (all 515 are Google; address 8412 E Shea Blvd Suite 101, Scottsdale AZ 85260). Every quote on the page is verbatim from that listing. Rating and count appear in the stat band, the score cell, the trust band, the disclaimer, and the footer; keep all five in sync. Provider roster: tuteramedical.com nav "Our Providers" (/hormone-replacement-phoenix/) + About page team caption, verified 2026-08-16. -->
+<!-- Claim source: Tutera Medical rated 5.0 across 737 Google reviews, the aggregate Jacob ruled 2026-08-17: 515 = the Scottsdale listing alone (8412 E Shea Blvd Suite 101, Scottsdale AZ 85260; verified 2026-08-14 via the Google listing mirror at reviews.birdeye.com/tutera-medical-inc-156468039789264), 222 = Glendale's own 5.0 listing; 737 = their sum, cross-model audited (codex+kimi). Build-day verify: re-pull both live GBP counts, check whether Chandler has its own listing, and confirm every listing in the sum still shows 5.0 (rounding law: "5.0" holds while the weighted average across the summed listings rounds to 5.0; drop a sub-5.0 listing from the sum rather than weaken the rating claim). Every quote on the page is verbatim from that listing. Rating and count appear in the stat band, the score cell, the trust band, the disclaimer, and the footer; keep all five in sync. Provider roster: tuteramedical.com nav "Our Providers" (/hormone-replacement-phoenix/) + About page team caption, verified 2026-08-16. -->
   <a class="skip" href="#main">Skip to main content</a>
 
   <header class="nav" id="nav">
@@ -815,7 +856,7 @@
       </nav>
       <!-- SWAP: nav CTA -->
       <!-- SWAP: nav CTA (phones show the short label beside the brand; no Call / Book bar) -->
-      <a class="btn nav-cta" href="#lead"><span class="lg">Complimentary consult</span><span class="sm">Book consult</span></a>
+      <a class="btn nav-cta" href="#lead"><span class="lg">Free consult</span><span class="sm">Book consult</span></a>
     </div>
   </header>
 
@@ -832,7 +873,7 @@
         <!-- SWAP: hero eyebrow (locations only: town and landmark), H1 (7 words) + sub (12 words) -->
         <p class="kicker reveal">Scottsdale &middot; Chandler &middot; Glendale</p>
         <h1 class="reveal" style="--d:.06s">Facial injectables, <span class="vio">planned before <span class="nw">they're placed.</span></span></h1>
-        <p class="hero-sub reveal" style="--d:.12s">Provider-placed facial injectables in Scottsdale, Chandler and Glendale, serving the Phoenix Valley. Every plan starts with a complimentary <span class="nw">consultation.</span></p>
+        <p class="hero-sub reveal" style="--d:.12s">Provider-placed facial injectables in Scottsdale, Chandler and Glendale, serving the Phoenix Valley. Every plan starts with a free <span class="nw">consultation.</span></p>
         <div class="hero-cta reveal" style="--d:.18s">
           <!-- SWAP: hero CTA labels + hrefs -->
           <a class="btn" href="#lead">Book your consultation
@@ -842,13 +883,13 @@
         </div>
         <!-- SWAP: four hero chips -->
         <ul class="hero-chips reveal" style="--d:.24s" aria-label="At a glance">
-          <li>Complimentary consultation</li>
+          <li>Free consultation</li>
           <li>Natural, never overdone</li>
           <li>Physician-founded practice</li>
           <li>Three Valley offices</li>
         </ul>
         <!-- SWAP: hero proof line (rating + count must match the claim source comment) -->
-        <p class="hero-proof reveal" style="--d:.3s"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Rated 5.0 across 515 Google reviews</p>
+        <p class="hero-proof reveal" style="--d:.3s"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Rated 5.0 across 737 Google reviews</p>
       </div>
     </section>
 
@@ -857,9 +898,9 @@
       <h2 class="vh">At a glance</h2>
       <!-- SWAP: 3 stats (rating + count must match the claim source comment at the top of body) -->
       <ul class="wrap">
-        <li class="reveal"><b>5.0</b><span>across 515 Google reviews</span></li>
+        <li class="reveal"><b>5.0</b><span>across 737 Google reviews</span></li>
         <li class="reveal" style="--d:.06s"><b class="word">Three offices</b><span>Scottsdale, Chandler, Glendale</span></li>
-        <li class="reveal" style="--d:.12s"><b class="word">Complimentary</b><span>consultation, no obligation</span></li>
+        <li class="reveal" style="--d:.12s"><b class="word">Free</b><span>consultation, no obligation</span></li>
       </ul>
     </section>
 
@@ -867,27 +908,27 @@
     <section class="sec wrap" id="you">
       <div class="sec-head">
         <!-- SWAP: pain heading (no lede) -->
-        <h2 class="reveal">Sound familiar?</h2>
+        <h2 class="reveal">Which of these brought you here?</h2>
       </div>
       <!-- SWAP: 4 pain cards (icon, number, display line, one sentence) -->
       <div class="you-grid reveal">
         <div class="you-card">
           <span class="you-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M7.4 9.4l2.4-.9M16.6 9.4l-2.4-.9M11.1 8.6v2.3M12.9 8.6v2.3"/><circle cx="9" cy="12.2" r=".55" fill="currentColor" stroke="none"/><circle cx="15" cy="12.2" r=".55" fill="currentColor" stroke="none"/><path d="M9.2 16.6c1.5-1.4 4.1-1.4 5.6 0"/></svg></span>
           <span class="you-no" aria-hidden="true">01</span>
-          <h3>Frown lines</h3>
-          <p>The lines between your brows that read as tired or stern.</p>
+          <h3>Lost volume</h3>
+          <p>Cheeks and lips that have thinned with time.</p>
         </div>
         <div class="you-card">
           <span class="you-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.2 6.6h5.6M8.4 8.6h7.2M8.8 10.6h6.4"/><circle cx="9.3" cy="13.6" r=".55" fill="currentColor" stroke="none"/><circle cx="14.7" cy="13.6" r=".55" fill="currentColor" stroke="none"/><path d="M9.6 16.4c1.3 1.1 3.5 1.1 4.8 0"/></svg></span>
           <span class="you-no" aria-hidden="true">02</span>
-          <h3>Forehead lines</h3>
-          <p>Lines that stay even when your face is at rest.</p>
+          <h3>Deeper folds</h3>
+          <p>Smile lines that makeup settles into.</p>
         </div>
         <div class="you-card">
           <span class="you-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12c3-4 5.8-4.4 8.5-2.3 2.6-2.1 5.4-1.7 8.4 2.3-3 4.6-5.8 6.1-8.4 6.1S5.5 16.6 2.5 12Z"/><circle cx="11" cy="12.4" r="1.9"/><path d="M20.3 9.1l2.3-1.5M20.9 12h2.7M20.3 14.9l2.3 1.5"/></svg></span>
           <span class="you-no" aria-hidden="true">03</span>
-          <h3>Around the eyes</h3>
-          <p>Lines when you smile that you'd like softer, not gone.</p>
+          <h3>Thin lips</h3>
+          <p>Lips you'd like subtly fuller, still yours.</p>
         </div>
         <div class="you-card">
           <span class="you-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.2v6.1"/><circle cx="12" cy="16.5" r=".75" fill="currentColor" stroke="none"/></svg></span>
@@ -903,7 +944,7 @@
       <div class="wrap map-grid">
         <div class="map-side">
           <!-- SWAP: heading (no lede) -->
-          <h2 class="reveal">Where injectables <span class="nw">can help</span></h2>
+          <h2 class="reveal">Where filler <span class="nw">can help</span></h2>
           <!-- Signature: the treatment map drawing (decorative; palette rides the :root tokens). Points: forehead, between the brows, beside the eye. -->
 <div class="profile reveal" id="map" style="--d:.18s">
             <svg viewBox="30 72 254 396" role="img" focusable="false" aria-label="A single flowing line drawing of a woman's profile with swept back hair, marked with three treatment points: the forehead, between the brows, and beside the eye.">
@@ -911,9 +952,9 @@
               <path class="line l2" pathLength="1000" d="M110 188 C117 192 124 192 130 188"/>
               <path class="line l2" pathLength="1000" d="M84 217 C87 219 90 219 92 217"/>
               <path class="line l2" pathLength="1000" d="M86 248 C90 250 94 250 98 249"/>
-              <g class="pt"><circle class="pt-ring" cx="124" cy="138" r="12"/><circle class="pt-dot" cx="124" cy="138" r="3.2"/></g>
-              <g class="pt"><circle class="pt-ring" cx="98" cy="176" r="12"/><circle class="pt-dot" cx="98" cy="176" r="3.2"/></g>
-              <g class="pt"><circle class="pt-ring" cx="146" cy="196" r="12"/><circle class="pt-dot" cx="146" cy="196" r="3.2"/></g>
+              <g class="pt"><circle class="pt-ring" cx="142" cy="220" r="12"/><circle class="pt-dot" cx="142" cy="220" r="3.2"/></g>
+              <g class="pt"><circle class="pt-ring" cx="114" cy="232" r="12"/><circle class="pt-dot" cx="114" cy="232" r="3.2"/></g>
+              <g class="pt"><circle class="pt-ring" cx="100" cy="262" r="12"/><circle class="pt-dot" cx="100" cy="262" r="3.2"/></g>
             </svg>
           </div>
         </div>
@@ -922,57 +963,34 @@
           <div class="area-row">
             <span class="area-thumb media" aria-hidden="true"><img src="tutera-assets/study-mirror-happy.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span>
             <span class="no" aria-hidden="true">01</span>
-            <div><h3>Frown lines</h3><p class="desc">Helps soften the look of the lines between the brows.</p></div>
+            <div><h3>Lips</h3><p class="desc">Helps restore subtle volume in the lips, a little at a time.</p></div>
           </div>
           <div class="area-row">
             <span class="area-thumb media" aria-hidden="true"><img src="tutera-assets/study-mirror-plan.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span>
             <span class="no" aria-hidden="true">02</span>
-            <div><h3>Forehead lines</h3><p class="desc">Helps smooth the look of horizontal lines, while you still look like you.</p></div>
+            <div><h3>Cheeks</h3><p class="desc">Helps restore subtle volume in the cheeks, where time has softened it.</p></div>
           </div>
           <div class="area-row">
             <span class="area-thumb media" aria-hidden="true"><img src="tutera-assets/study-smile-window.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span>
             <span class="no" aria-hidden="true">03</span>
-            <div><h3>Around the eyes</h3><p class="desc">Helps soften the lines beside the eyes and keeps your smile.</p></div>
+            <div><h3>Folds</h3><p class="desc">Helps smooth the look of deeper folds.</p></div>
           </div>
           <div class="area-row">
             <span class="area-thumb media" aria-hidden="true"><img src="tutera-assets/study-consult-chandler.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span>
             <span class="no" aria-hidden="true">04</span>
-            <div><h3>Not sure yet</h3><p class="desc">Your consult decides together, and nothing is placed until you understand the plan.</p></div>
+            <div><h3>Not sure yet</h3><p class="desc">You and your provider decide together, and nothing is placed until you understand the plan.</p><a class="textlink area-link" href="#reserve">Book a free consult <span aria-hidden="true">&rarr;</span></a></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 5 · WHAT TO EXPECT: six rows + consult figure + CTA repeat ============ -->
-    <section class="sec wrap" id="expect">
-      <div class="result-grid">
-        <!-- SWAP: consult figure (nurse and patient, AI-modelled study) -->
-        <figure class="result-fig reveal" style="--d:.1s">
-          <div class="media"><img src="tutera-assets/figure-mirror-happy-glendale.webp" width="960" height="1192" alt="A physician holds a hand mirror for a smiling patient in the Glendale treatment room, studio recreation" loading="lazy" decoding="async"></div>
-          <figcaption>It starts with a conversation, not a syringe</figcaption>
-        </figure>
-        <div>
-          <!-- SWAP: heading + 6 expectation rows + CTA -->
-          <p class="kicker reveal">What to expect</p>
-          <h2 class="reveal" style="--d:.06s">A refreshed version <span class="nw">of yourself.</span></h2>
-          <ul class="rlist expect-list reveal" style="--d:.12s">
-            <li><b>A natural look</b><span>a refreshed version of yourself, never overdone</span></li>
-            <li><b>A whole-face plan</b><span>balanced, built in the right order, with you</span></li>
-            <li><b>Skilled, licensed providers</b><span>options talked through before anything is done</span></li>
-            <li><b>Start conservatively</b><span>honest answers, including when the answer is to wait</span></li>
-            <li><b>Costs explained up front</b><span>gone over clearly at your consultation</span></li>
-            <li><b>Three Valley offices</b><span>Scottsdale, Chandler or Glendale, whichever suits you</span></li>
-          </ul>
-          <div class="hero-cta reveal" style="--d:.18s">
-            <a class="btn" href="#lead">Book your consultation
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 7 · OFFER BLOCK: your first visit, a complimentary consultation (lit ground, real team photo) ============ -->
+    <!-- ============ 5 · THE OFFER: one section, was two ============================
+         Condensed 2026-08-18. Four of the six "What to expect" rows restated an offer
+         bullet (whole-face plan / face read first, skilled licensed providers twice, a
+         conservative start twice, costs up front twice) and the first row repeated its
+         own H2 word for word. Kept the real team photograph over the AI studio
+         recreation of a patient, the offer lede and promise line (the two best-graded
+         sentences in either section), and the fine-print hedge, the page's only one. ==== -->
     <section class="sec lit offer-sec" id="offer">
       <div class="wrap practice-grid">
         <!-- SWAP: provider portraits (real headshots from tuteramedical.com, current roster verified 2026-08-16; names and credentials exactly as the site lists them) -->
@@ -987,15 +1005,17 @@
           <p class="team-note">The providers, across the Scottsdale, Chandler and Glendale offices</p>
         </div>
         <div class="offer-body">
-          <!-- SWAP: consult kicker, heading, lede, 3 numbered moments, CTAs, disclaimer. Keep it this light: one short line per step, no bullet list that mirrors #expect (Jennifer 2026-08-17) -->
-          <p class="kicker reveal">Your first visit</p>
-          <h2 class="reveal" style="--d:.06s">Come with questions. <span class="nw">Leave with a plan.</span></h2>
-          <p class="lead reveal" style="--d:.12s">Complimentary, and nothing has to happen the same day.</p>
-          <ol class="consult-steps reveal" style="--d:.18s">
-            <li><i>01</i><div><b>Ask anything</b><span>Your questions, photos, and what bothers you most.</span></div></li>
-            <li><i>02</i><div><b>Get honest answers</b><span>Your face read first: what helps, what won't, and when to wait.</span></div></li>
-            <li><i>03</i><div><b>See the plan and the cost</b><span>A conservative start, priced clearly. Take it home and think it over.</span></div></li>
-          </ol>
+          <p class="kicker reveal">What to expect</p>
+          <h2 class="reveal" style="--d:.06s">A free <span class="nw">first consultation.</span></h2>
+          <p class="lead reveal" style="--d:.12s">An honest look at what will help, what won&rsquo;t, and when to wait.</p>
+          <ul class="rlist reveal" style="--d:.18s">
+            <li>Your face read first, then a plan built in the right order</li>
+            <li>A conservative start, and an honest answer when the answer is to wait</li>
+            <li>Skilled, licensed providers, every visit</li>
+            <li>Costs explained clearly up front</li>
+            <li>Scottsdale, Chandler or Glendale, whichever suits you</li>
+          </ul>
+          <p class="promise reveal" style="--d:.22s">No pressure. No obligation. No surprises.</p>
           <div class="hero-cta reveal" style="--d:.26s">
             <a class="btn" href="#lead">Book your consultation
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1012,7 +1032,7 @@
       <h2 class="vh">Why Tutera Medical</h2>
       <!-- SWAP: 5 trust pairs (label + one line). Only claim credentials the client can document. -->
       <ul class="wrap reveal">
-        <li><b>Rated 5.0 on Google</b><span>across 515 Google reviews</span></li>
+        <li><b>Rated 5.0 on Google</b><span>across 737 Google reviews</span></li>
         <li><b>Physician-founded</b><span>a medical practice, not a counter</span></li>
         <li><b>Natural, never overdone</b><span>planned with you, never pushed</span></li>
         <li><b>Skilled, licensed providers</b><span>every visit, every treatment</span></li>
@@ -1054,7 +1074,7 @@
           <svg class="grev-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.88c2.27-2.09 3.54-5.17 3.54-8.87z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.76-2.11-6.7-4.94H1.29v3.09A11.99 11.99 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.31a7.2 7.2 0 0 1 0-4.62V6.6H1.29a12 12 0 0 0 0 10.8l4.01-3.09z"/><path fill="#EA4335" d="M12 4.77c1.76 0 3.35.61 4.6 1.8l3.43-3.43A11.99 11.99 0 0 0 12 0 11.99 11.99 0 0 0 1.29 6.6l4.01 3.09C6.24 6.88 8.88 4.77 12 4.77z"/></svg>
           <span class="grev-num">5.0</span>
           <span class="grev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="grev-count">Rated 5.0 across 515 Google reviews</span>
+          <span class="grev-count">Rated 5.0 across 737 Google reviews</span>
           <a class="textlink" href="https://search.google.com/local/reviews?placeid=ChIJ_____691K4cRpSzZYos1JDc" target="_blank" rel="noopener noreferrer">Read all reviews on Google</a>
         </div>
         <figure class="grev-quote">
@@ -1109,7 +1129,7 @@
       <div class="grev-actions reveal">
         <button class="btn btn-ghost" id="grevMore" type="button" aria-expanded="false" aria-controls="grevWall">Show more reviews</button>
       </div>
-      <p class="grev-disc reveal">Verbatim excerpts from verified Google reviews of Tutera Medical Inc (rated 5.0 across 515 reviews). Individual experiences; results vary and are not guaranteed.</p>
+      <p class="grev-disc reveal">Verbatim excerpts from verified Google reviews of Tutera Medical Inc (rated 5.0 across 737 reviews). Individual experiences; results vary and are not guaranteed.</p>
     </section>
 
     <!-- ============ 11 · CLOSING CTA + FORM: ready for a refreshed look? ============ -->
@@ -1122,7 +1142,7 @@
             <div class="offer-head reveal">
             <p class="kicker">Book</p>
             <h2>Ready for a <span class="nw">refreshed look?</span></h2>
-            <p>Book a complimentary consult, in person or virtual. Tell us where you'd like to be seen and we'll call to schedule.</p>
+            <p>Book a free consult, in person or virtual. Tell us where you'd like to be seen and we'll call to schedule.</p>
             </div>
             <div class="offer-loc reveal">
             <div class="price-line">
@@ -1174,11 +1194,13 @@
                   </select>
                 </div>
               </div>
+              <div style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden" aria-hidden="true"><label for="hp-company">Company</label><input id="hp-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
               <input type="hidden" id="gclid" name="gclid">
               <button class="btn" type="submit" style="width:100%">Book my consultation
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <p class="form-note">Complimentary consult, no obligation, we'll go over any costs first. Contact details only, please don't share medical information here. This page is advertising, not medical advice.</p>
+              <p id="lp-relay-err" hidden style="color:#e08d84;font-weight:600;font-size:.9rem;margin-top:10px">Something went wrong and your request was not sent. Please try again, or call <a href="tel:+14808741515" style="color:inherit;text-decoration:underline">(480) 874-1515</a> to book by phone.</p>
+              <p class="form-note">Free consult, no obligation, we'll go over any costs first. Contact details only, please don't share medical information here. This page is advertising, not medical advice.</p>
             </form>
             <!-- SWAP: submit note. PLACEHOLDER: the form is not wired; this note only stands in for the GHL response until wiring. -->
             <p id="done" role="status" hidden>Received. A member of our team will confirm your consultation and answer any questions. Nothing is booked or charged until you say so.</p>
@@ -1186,7 +1208,7 @@
             <div class="talk reveal" aria-label="Other ways to reach the studio">
               <a class="talk-tile" href="tel:+14808741515">
                 <span class="talk-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-                <span class="talk-tx"><span class="talk-lb">Prefer to talk?</span><span class="talk-v">(480) 874-1515</span></span>
+                <span class="talk-tx"><span class="talk-lb">Or call the office</span><span class="talk-v">(480) 874-1515</span></span>
               </a>
             </div>
           </div>
@@ -1209,7 +1231,7 @@
         </details>
         <details>
           <summary>What does it cost?<span class="pm" aria-hidden="true"></span></summary>
-          <p class="ans">Your initial consultation is complimentary, so you can get answers before committing to anything. Because the right plan depends on the treatment, your provider goes over any costs clearly with you, with no surprises. Call (480) 874-1515 with questions.</p>
+          <p class="ans">Your initial consultation is free, so you can get answers before committing to anything. Because the right plan depends on the treatment, your provider goes over any costs clearly with you, with no surprises. Call (480) 874-1515 with questions.</p>
         </details>
         <details>
           <summary>Who places the injections?<span class="pm" aria-hidden="true"></span></summary>
@@ -1225,7 +1247,7 @@
         </details>
         <details>
           <summary>Is it right for me?<span class="pm" aria-hidden="true"></span></summary>
-          <p class="ans">Aesthetic treatments are elective and not right for everyone. What is appropriate is decided at a consultation with a licensed provider, and a complimentary consultation is where that decision is made together. We will be honest about what will help, what won't, and when the answer is to wait or do less.</p>
+          <p class="ans">Aesthetic treatments are elective and not right for everyone. What is appropriate is decided at a consultation with a licensed provider, and a free consultation is where that decision is made together. We will be honest about what will help, what won't, and when the answer is to wait or do less.</p>
         </details>
       </div>
     </section>
@@ -1238,7 +1260,7 @@
       <div class="foot-grid">
         <div class="foot-brand">
           <a class="brand" href="#top" aria-label="Tutera Medical, back to top">
-            <img src="tutera-assets/tutera-logo.png" alt="Tutera Medical" width="215" height="63" style="width:auto;height:34px;filter:brightness(0) invert(1)" loading="lazy" decoding="async">
+            <img src="tutera-assets/tutera-logo-navy.png" alt="Tutera Medical" width="215" height="63" style="width:auto;height:34px" loading="lazy" decoding="async">
           </a>
           <!-- SWAP: footer blurb -->
           <p>A physician-founded hormone, wellness and aesthetics practice serving the Phoenix Valley from Scottsdale, Chandler and Glendale.</p>
@@ -1258,13 +1280,13 @@
           <ul>
             <li><a href="tel:+14808741515">(480) 874-1515</a></li>
           </ul>
-          <p>Monday to Thursday, 8:00 AM to 5:00 PM<br>Chandler also Friday, 8:00 AM to 12:00 PM<br>Consultations complimentary, in person or virtual</p>
+          <p>Monday to Thursday, 8:00 AM to 5:00 PM<br>Chandler also Friday, 8:00 AM to 12:00 PM<br>Consultations free, in person or virtual</p>
         </div>
       </div>
       <div class="foot-bottom">
         <!-- SWAP: copyright + medical disclaimer + review source + imagery honesty note -->
         <p>&copy; Copyright 2021 Tutera Medical | All Rights Reserved <span class="sep" aria-hidden="true">|</span> <a class="maplink" href="https://tuteramedical.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a> <span class="sep" aria-hidden="true">|</span> <a class="maplink" href="https://tuteramedical.com/terms-of-service/" target="_blank" rel="noopener noreferrer">Terms</a> <span class="sep" aria-hidden="true">|</span> <a class="maplink" href="https://tuteramedical.com/accessibility/" target="_blank" rel="noopener noreferrer">Accessibility</a></p>
-        <p>TERMS OF USE: This site is for educational purposes only. It is not intended as a substitute for the diagnosis, treatment, and advice of a qualified licensed medical professional. Tutera Medical assumes no responsibility for how the site content is used. Tutera Medical (a) does not recommend or endorse any medical professionals and (b) disclaims any representations, warranties, or liability of any kind with respect to any medical professional or the quality of the healthcare services he or she may provide.</p>
+        <p>This page is advertising, not medical advice. The information on it is for general educational purposes. Aesthetic injectable treatments are available only after a consultation and evaluation by a licensed provider, and only if appropriate for you. Individual results vary and are not guaranteed. This page does not create a patient-provider relationship. If you are experiencing a medical emergency, call 911.</p>
       </div>
     </div>
   </footer>
@@ -1334,8 +1356,26 @@
         document.addEventListener("keydown",function(e){if(e.key==="Escape"&&btn.getAttribute("aria-expanded")==="true"){closeMenu();btn.focus();}});
       }
 
+      /* Lead relay: POST to /api/lp-lead (the portal GHL relay). client/service come from
+         the URL path; first+last join into the relay's single name field. */
       var form=document.getElementById("lead"),done=document.getElementById("done");
-      if(form){form.addEventListener("submit",function(ev){ev.preventDefault();form.hidden=true;if(done)done.hidden=false;});}
+      if(form){form.addEventListener("submit",function(ev){
+        ev.preventDefault();
+        var el=function(id){var n=document.getElementById(id);return n&&n.value?n.value.trim():"";};
+        var btn=form.querySelector('button[type="submit"]');var btnText=btn?btn.textContent:"";
+        if(btn){btn.disabled=true;btn.textContent="Sending\u2026";}
+        var err=document.getElementById("lp-relay-err");if(err)err.hidden=true;
+        function ls(k){try{return localStorage.getItem(k)||"";}catch(x){return "";}}
+        var seg=location.pathname.split("/").filter(Boolean);
+        var q=new URLSearchParams(location.search);
+        var payload={client:seg[0]||"",service:seg[1]||"",source_page:location.pathname,
+          name:(el("fn")+" "+el("ln")).trim(),phone:el("ph"),email:el("em"),
+          location:el("loc"),consult_type:el("ct"),company:el("hp-company")};
+        ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){var v=q.get(k)||ls('lp_'+k);if(v)payload[k]=String(v).slice(0,200);});
+        fetch('/api/lp-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+          .then(function(r){if(!r.ok)throw new Error("relay "+r.status);try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:"lp_form_submit_success",lp_client:payload.client,lp_service:payload.service,lp_source_page:payload.source_page});}catch(x){}form.hidden=true;if(done)done.hidden=false;})
+          .catch(function(){if(btn){btn.disabled=false;btn.textContent=btnText;}if(err)err.hidden=false;});
+      });}
 
 
       var y=document.getElementById("year");if(y)y.textContent=String(new Date().getFullYear());
@@ -1401,7 +1441,7 @@
       "use strict";
       try{
         var q=new URLSearchParams(location.search);
-        ["gclid","gbraid","wbraid"].forEach(function(k){var val=q.get(k);if(val)localStorage.setItem("lp_"+k,val);});
+        ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){var val=q.get(k);if(val)localStorage.setItem('lp_'+k,val);});
         var hf=document.getElementById("gclid");
         if(hf)hf.value=q.get("gclid")||localStorage.getItem("lp_gclid")||"";
       }catch(err){}
