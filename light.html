@@ -2,8 +2,7 @@
 <!--
   TUTERA MEDICAL : FACIAL INJECTABLES : GOOGLE ADS LANDING PAGE on master 57 Verdant (2026-08-16), LIGHT + REARRANGED twin (2026-08-17)
   Jennifer 2026-08-17: a light-ground copy of the dark page (saved as ...-dark-SAVED-2026-08-17.html) that is deliberately
-  ARRANGED differently from the Tutera aesthetics light page: warm porcelain ground (not the aesthetics ice-blue), split hero
-  (copy on the ground + photo panel, no tint), Where-it-helps as 2x2 study cards (not rows), What-to-expect and the offer block
+  ARRANGED differently from the Tutera aesthetics light page: warm porcelain ground (not the aesthetics ice-blue), full-bleed hero kept as on the dark page (navy scrim, light type), Where-it-helps as 2x2 study cards (not rows), What-to-expect and the offer block
   mirrored (copy left, imagery right). Content identical to the dark page. Overrides live in the LIGHT+REARRANGED block at the end of <style>.
   Client copy of google-ad-templates/57-filler-verdant.html (the approved Cedar Creek conversion spine),
   filled at SWAP points only: Tutera palette (navy #152966 ground family + teal #2596be accent + ice #e9f9ff
@@ -784,7 +783,7 @@
     /* ================= LIGHT + REARRANGED twin (Jennifer 2026-08-17) =================
        Everything below overrides the dark shell. Palette flipped in :root; here: buttons, dark-assuming
        glass/scrim rules, and the four ARRANGEMENT changes that keep this page from being the aesthetics
-       light page in a different coat: split hero, 2x2 study cards, mirrored expect + offer columns. */
+       light page in a different coat: full-bleed hero (as the dark page), 2x2 study cards, mirrored expect + offer columns. */
     .btn{background:var(--cedar);color:#ffffff;border-color:var(--cedar)}
     .btn:hover{background:#2a4590;border-color:#2a4590}
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
@@ -802,21 +801,29 @@
     .offer-fig .media::after{background:linear-gradient(164deg,rgba(84,198,208,.05),rgba(13,27,62,.04))}
     .trust .tlink{color:var(--vio-deep)}
     .cta-scrim{background:linear-gradient(to right,var(--veil),var(--scrim-mid) 40%,var(--scrim) 78%)}
-    /* 1. HERO: split. Copy sits on the porcelain ground, the still is a clean photo panel on the right (no tint, no scrim). Phones stack: photo first, copy under it. */
-    .hero{min-height:0;display:grid;grid-template-columns:1fr;align-items:stretch;background:var(--noir);border-bottom:1px solid var(--hair)}
-    .hero .media{position:relative;inset:auto;order:-1;aspect-ratio:16/10;margin-top:76px;overflow:hidden;border-bottom:1px solid var(--hair)}
-    .hero .media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 45%;filter:var(--grade)}
-    .hero-scrim,.hero-scrim::after{display:none}
-    .hero .hero-in{padding-top:clamp(2rem,4vw,3rem);padding-bottom:clamp(2.6rem,5vw,4rem)}
-    .hero h1{font-size:clamp(2.6rem,5vw,4.6rem);max-width:12ch}
-    .hero .hero-sub{color:var(--ink-2)}
-    .hero-proof{color:var(--ink-2)}
-    .hero-proof .stars{color:var(--vio)}
-    @media (min-width:960px){
-      .hero{grid-template-columns:minmax(0,54fr) minmax(0,46fr);min-height:min(88vh,820px)}
-      .hero .media{order:2;aspect-ratio:auto;margin-top:0;border-bottom:0;border-left:1px solid var(--hair);height:100%}
-      .hero .hero-in{order:1;width:auto;margin-inline:0;padding-top:calc(76px + clamp(2.6rem,5vw,4rem));padding-left:max(1.65rem,calc((100vw - 1160px)/2));padding-right:clamp(2rem,4vw,4rem);align-self:center}
-    }
+    /* 1. HERO: back to the original full-bleed still with the copy over it (Jennifer 2026-08-17: "how it used to be, just the hero").
+       The dark page's navy scrim + light type are hard-coded here so the hero reads exactly like the dark page while the rest of the page is light. */
+    .hero .media>img{filter:grayscale(.12) brightness(.9) contrast(1.04)}
+    .hero-scrim{background:linear-gradient(to top,rgba(11,21,47,.93) 4%,rgba(11,21,47,.48) 46%,rgba(11,21,47,.36)),linear-gradient(to right,rgba(11,21,47,.48),transparent 55%)}
+    .hero h1{color:#eef4f9}
+    .hero h1 .vio,.hero .kicker{color:#3aa8d0}
+    .hero .kicker::before{background:#3aa8d0}
+    .hero .hero-sub{color:#c3d1de}
+    .hero .btn{background:#ffffff;color:#152966;border-color:#ffffff}
+    .hero .btn:hover{background:#a9dcef;border-color:#a9dcef}
+    .hero .btn-ghost{background:transparent;color:#eef4f9;border-color:rgba(238,244,249,.3)}
+    .hero .btn-ghost:hover{color:#a9dcef;border-color:#3aa8d0}
+    .hero .hero-chips li{background:rgba(14,21,18,.42);backdrop-filter:blur(6px);color:#eef4f9;border-color:rgba(238,244,249,.14)}
+    .hero .hero-chips li::before{background:#3aa8d0}
+    .hero-proof{color:#c3d1de}
+    .hero-proof .stars{color:#3aa8d0}
+    /* header over the dark hero: transparent, white logo + links until it scrolls solid onto the porcelain ground */
+    .nav:not(.scrolled)::before,.nav:not(.scrolled)::after{opacity:0}
+    .nav:not(.scrolled) .brand img{filter:brightness(0) invert(1)}
+    .nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.88)}
+    .nav:not(.scrolled) .nav-links a:hover{color:#a9dcef}
+    .nav:not(.scrolled) .nav-cta{background:#ffffff;color:#1f3470;border-color:#ffffff}
+    .nav:not(.scrolled) .menu-btn{color:#ffffff;border-color:rgba(255,255,255,.35)}
     /* 2. WHERE IT HELPS: 2x2 study cards instead of stacked rows; the treatment map stays sticky on the left. */
     .area-list{border-top:0;display:grid;grid-template-columns:1fr;gap:1rem}
     .area-row,.area-row:hover{background:var(--noir)}
